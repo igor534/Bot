@@ -1,0 +1,13 @@
+services:
+  - type: background
+    name: telegram-news-bot
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        scope: private
+      - key: CHAT_ID
+        scope: private
